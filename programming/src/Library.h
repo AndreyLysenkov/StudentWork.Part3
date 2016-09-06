@@ -20,6 +20,8 @@ private:
 	char* author;
 	float price;
 
+	void Init(char* _name, char* _time, float _price);
+
 public:
 
 	/*
@@ -27,13 +29,14 @@ public:
 	 * */
 
 	const int MAX_CHAR_SIZE = 100;
-
+	const char* NAME_DEFAULT = "Andrey Lysenkov";
+	const char* AUTHOR_DEFAULT = "Andrey Lysenkov";
 
 	/*
 	 * Constructors & destructors
 	 * */
 
-	Library(char* name, char* time, float price);
+	Library(char* _name, char* _time, float _price);
 	Library();
 	Library(Library* obj);
 	~Library();

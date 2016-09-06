@@ -5,28 +5,33 @@
  *      Author: walpy
  */
 
+#include <string.h>
 #include "Library.h"
 
-  Library::Library(char* &name,  char* &time, float price)
+
+  void Library::Init(char* _name,  char* _author, float _price)
   {
-     this -> name = name;
-     this -> author = author;
-     this -> price = price;
+	this->name = new char[MAX_CHAR_SIZE];
+	strcpy(name, _name);
+	this->author = new char[MAX_CHAR_SIZE];
+    strcpy(author, _author);
+    this -> price = price;
+  }
+
+  Library::Library(char* _name,  char* _author, float _price)
+  {
+	this->Init(_name, _author, _price);
   }
 
   Library::Library()
   {
-      this -> name = "How to spend a day, doing nothing?";   ///correct these lines
-      this -> author = "Andrey Lysenkov";
-      this -> price = 0.0f;
+     this -> Init(NAME_DEFAULT, AUTHOR_DEFAULT, 0.0f);
   }
 
   Library::Library(Library *obj)
   {
-      this -> name = obj -> name;
-      this -> author = obj -> author;
-      this -> price= obj -> price;
-   }
+	  this -> Init(obj -> name, obj -> author, obj -> price);
+  }
 
    Library::~Library()
    {
@@ -34,35 +39,36 @@
       delete author;
    }
 
-   char* Library::GetAuthor()
+   void Library::SetAuthor(char* _author)
    {
-	   return this -> author;
+	  this->author = new char[MAX_CHAR_SIZE];
+      strcpy(author, _author);
    }
 
-   void Library::SetAuthor(char* author)
+   char* Library::GetAuthor()
    {
-      this -> author = new char[MAX_CHAR_SIZE];
-	  strcpy(author);
+       return this -> author;
+   }
+
+   void Library::SetName(char* _name)
+   {
+	   this->name = new char[MAX_CHAR_SIZE];
+      strcpy(name, _name);
    }
 
    char* Library::GetName()
    {
-	   return &(this -> name);
-   }
-
-   void Library::SetName(char *name)
-   {
-      this -> name = &name;
-   }
-
-   float Library::GetPrice()
-   {
-	   return &(this -> price);
+       return this -> name;
    }
 
    void Library::SetPrice(float price)
    {
-      this -> price = &price;
+      this -> price = price;
+   }
+
+   float Library::GetPrice()
+   {
+       return this -> price;
    }
 
 
