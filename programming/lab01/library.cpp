@@ -40,10 +40,10 @@
   {
 	Log("Calling copy constructor");
     this -> name = new char[MAX_CHAR_SIZE];
-    strcpy(name, obj -> GetName());
+    strcpy(name, obj.GetName());
     this -> author = new char[MAX_CHAR_SIZE];
-    strcpy(author,  obj -> GetAuthor());
-    this -> price = obj -> GetPrice();
+    strcpy(author,  obj.GetAuthor());
+    this -> price = obj.GetPrice();
   }
 
   Library::~Library()
@@ -93,7 +93,7 @@
 	  std::cout << valueName << "  : " << value << std::endl;
   }
 
-  void PrintString(const char* valueName, const float value)
+  void PrintString(const char* valueName, float value)
   {
 	  std::cout << valueName << "  : " << value << std::endl;
   }

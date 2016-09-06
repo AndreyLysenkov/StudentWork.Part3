@@ -10,6 +10,8 @@
 #include <iostream>
 #include "library.h"
 
+typedef void (Library::*setFunc)(char*);
+
 void NewLine()
 {
 	std::cout << std::endl;
@@ -24,7 +26,7 @@ int main() {
 
 	Library *lib_empty = new Library();
 	Library lib_params("Sherlock Holmes", "Arthur Conan Doyle", 0.5f);
-	Library *lib_copy = new Library(lib_empty);
+	Library *lib_copy = new Library(*lib_empty);
 
 	NewLine();
 	std::cout << "Books printing...";
@@ -53,6 +55,32 @@ int main() {
 	lib_empty -> Print();
 	lib_params.Print();
 	lib_copy ->Print();
+
+    std::cout << "What to change?" << std::endl;
+    std::cout << "0. name" << std::endl;
+    std::cout << "1. author" << std::endl;
+    int choice;
+    std::cin >> choice;
+
+    setFunc setField = NULL;
+    switch (choice)
+    {
+        case(0):
+            //setFunc = &Library::SetName;
+            break;
+
+        case(1):
+            //setFunc = &Library::SetAuthor;
+            break;
+    }
+    if (setField != NULL)
+    {
+        std::cout << "New value: ";
+        char* value;
+        std::cin >> value;
+        //(lib_empty -> *setField)(value);
+    }
+    lib_empty -> Print();
 
 	/**/
 	return 0;
