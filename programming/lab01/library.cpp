@@ -9,6 +9,11 @@
 #include <string.h>
 #include "library.h"
 
+	void Log(char* message)
+	{
+	  std::cout << message << std::endl;
+	}
+
   const int MAX_CHAR_SIZE = 100;
 
   Library::Library(char* _name,  char* _author, float _price)
@@ -31,7 +36,7 @@
     this -> price = 0.0f;
   }
 
-  Library::Library(Library *obj)
+  Library::Library(Library &obj)
   {
 	Log("Calling copy constructor");
     this -> name = new char[MAX_CHAR_SIZE];
@@ -83,9 +88,14 @@
      return this -> price;
   }
 
-  void PrintString(const char* valueName, const char* str)
+  void PrintString(const char* valueName, const char* value)
   {
-	  std::cout << valueName << "  : " << str << std::endl;
+	  std::cout << valueName << "  : " << value << std::endl;
+  }
+
+  void PrintString(const char* valueName, const float value)
+  {
+	  std::cout << valueName << "  : " << value << std::endl;
   }
 
   void Library::Print()
@@ -93,6 +103,7 @@
 	  std::cout << "Book(ish): " << std::endl;
 	  PrintString("   Author", this -> author);
 	  PrintString("   Title ", this -> name);
+	  PrintString("   Price", this -> price);
 	  std::cout << std::endl;
 
   }

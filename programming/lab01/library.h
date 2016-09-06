@@ -28,7 +28,7 @@ public:
 
 	Library(char* _name, char* _time, float _price);
 	Library();
-	Library(Library* obj);
+	Library(Library &obj);
 	~Library();
 
 	/*

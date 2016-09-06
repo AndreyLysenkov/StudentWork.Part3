@@ -10,12 +10,6 @@
 #include <iostream>
 #include "library.h"
 
-
-void Log(char* message)
-{
-  std::cout << message << std::endl;
-}
-
 void NewLine()
 {
 	std::cout << std::endl;
@@ -24,41 +18,42 @@ void NewLine()
 int main() {
 
 	NewLine();
-	Log(Books);
+	std::cout << "Creating books...";
+	NewLine();
 	NewLine();
 
-	Library lib_empty = new Library();
-	Library lib_params = new Library(
-			"Sherlock Holmes",
-			"Arthur Conan Doyle",
-			0.5f);
-	Library lib_copy = new Library(lib_params);
+	Library *lib_empty = new Library();
+	Library lib_params("Sherlock Holmes", "Arthur Conan Doyle", 0.5f);
+	Library *lib_copy = new Library(lib_empty);
 
 	NewLine();
-	Log("Books printing...");
+	std::cout << "Books printing...";
+	NewLine();
 	NewLine();
 
-	lib_empty.Print();
+	lib_empty -> Print();
 	lib_params.Print();
-	lib_copy.Print();
+	lib_copy -> Print();
 
 	NewLine();
-	Log("Books changing ...");
+	std::cout << "Books changing ...";
+	NewLine();
 	NewLine();
 
-	lib_copy.SetName("Heaven has claws");
-	lib_copy.SetPrice(1.0f);
+	lib_copy -> SetName("Heaven has claws");
+	lib_copy -> SetPrice(1.0f);
 
-	lib_empty.SetAuthor("Andrey Lysenkov");
+	lib_empty -> SetAuthor("Andrey Lysenkov");
 
 	NewLine();
-	Log("Books printing...");
+	std::cout << "Books printing...";
+	NewLine();
 	NewLine();
 
-	lib_empty.Print();
+	lib_empty -> Print();
 	lib_params.Print();
-	lib_copy.Print();
+	lib_copy ->Print();
 
-
+	/**/
 	return 0;
 }
