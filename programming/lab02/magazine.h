@@ -10,7 +10,7 @@ protected:
 public:
     Magazine();
     Magazine(float price, char* title);
-    Magazine(const &Magazine);
+    Magazine(const Magazine&);
     ~Magazine();
 
     int GetYear();

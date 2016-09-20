@@ -7,40 +7,40 @@ Magazine::Init(int _year, int _month)
 }
 
 Magazine::Magazine(float _price, char* _title, int _year, int _mounth)
-    : base(_price, _title)
+    : Printing(_price, _title)
 {
-    this -> Init(_price, _title);
+    this -> Init(_year, _mounth);
 }
 
-Printing::Printing(const Library &obj)
+Magazine::Magazine(const Magazine& obj)
 {
-    this -> Init(obj.title, obj.price);
+    this -> Init(obj.year, obj.mounth);
 }
 
-Printing::Printing()
+Magazine::Magazine()
 {
-    this -> Init(DEFAULT_PRICE, DEFAULT_TITLE);
+    this -> Init(DEFAULT_YEAR, DEFAULT_MOUNTH);
 }
 
-Printing::~Printing()
+Magazine::~Magazine()
+{   }
+
+void Magazine::SetYear(int _year)
 {
-    delete title;
+    this -> year = _year;
 }
-class Magazine : Printing
+
+float Magazine::GetYear()
 {
-protected:
-    int year;
-    int month;
-    void Init(int year, int mounth);
-public:
-    Magazine();
-    Magazine(float price, char* title);
-    Magazine(const &Magazine);
-    ~Magazine();
+    return this -> year;
+}
 
-    int GetYear();
-    void SetYear(int);
+void Magazine::SetMounth(int _mounth)
+{
+    this -> mounth = _mounth;
+}
 
-    int GetMonth();
-    void SetMonth(int);
-};
+float Magazine::GetMounth()
+{
+    return this -> mounth;
+}

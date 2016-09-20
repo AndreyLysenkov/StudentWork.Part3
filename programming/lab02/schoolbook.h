@@ -1,6 +1,6 @@
 #pragma once
 
-class SchoolBook
+class SchoolBook : public Book
 {
 protected:
     char* Subject;

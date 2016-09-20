@@ -1,6 +1,6 @@
 #pragma once
 
-class Book
+class Book : public Printing
 {
 protected:
     char* author;
@@ -13,4 +13,4 @@ public:
 
     char* GetAuthor();
     void SetAuthor(char*);
-}
+};

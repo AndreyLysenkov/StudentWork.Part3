@@ -13,7 +13,7 @@ public:
 
     Printing();
     Printing(float price, char* title);
-    Printing(const &Printing obj);
+    Printing(const Printing&);
     ~Printing();
 
     char* GetTitle();
