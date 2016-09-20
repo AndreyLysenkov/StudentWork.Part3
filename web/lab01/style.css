@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 100%;
+}
+
+em {
+  font-family: cursive;
+}
+
+p:last-child em {
+  font-family: sans-serif;
+}
+
+.img {
+  text-align: center;
+}
