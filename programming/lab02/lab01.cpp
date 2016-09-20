@@ -8,60 +8,41 @@
 //============================================================================
 
 #include <iostream>
+#include "global.h"
+#include "printing.h"
 #include "magazine.h"
+#include "book.h"
+#include "schoolbook.h"
 
 int main() {
-/*
+
+    Printing::Top = NULL;
+
     NewLine();
     Log("Creating books...");
     NewLine();
     NewLine();
 
-    Library sherlockHolmes;
+    Book sherlockHolmes;
     sherlockHolmes.SetAuthor("Arthur Conan Doyle");
-    sherlockHolmes.SetName("Sherlock Holmes");
+    sherlockHolmes.SetTitle("Sherlock Holmes");
     sherlockHolmes.SetPrice(0.1f);
-    sherlockHolmes.Print();
 
-    Library sherlockHolmes2 (sherlockHolmes);
-    sherlockHolmes2.SetName("Adventures of Sherlock Holmes");
-    sherlockHolmes2.Print();
+    Book sherlockHolmes2 (sherlockHolmes);
+    sherlockHolmes2.SetTitle("Adventures of Sherlock Holmes");
 
-    Library itBook (
+    SchoolBook itBook (
+        1.5f,
         "C# 4.0: The Complete Reference",
         "Herbert Schildt",
-        1.5f
+        "Informatics",
+        11
     );
-    itBook.Print();
 
-    Library *itBook2 = new Library(itBook);
-    itBook2.Print();
+    //itBook.Add();
 
-    char* (Library::*getParametrPtr) ();
-    getParametrPtr = NULL;
+    Printing::Print();
 
-    std::cout << "What to see?" << std::endl;
-    std::cout << "0. name" << std::endl;
-    std::cout << "1. author" << std::endl;
-    int choice;
-    std::cin >> choice;
-
-    switch (choice)
-    {
-        case(0):
-            getParametrPtr = &Library::GetName;
-            break;
-
-        case(1):
-            getParametrPtr = &Library::GetAuthor;
-            break;
-    }
-    if (getParametrPtr != NULL)
-    {
-        std::cout << "Property is: " << (itBook2->*getParametrPtr) () << std::endl;
-    }
-
-    delete itBook2;
     //std::cin >> choice;*/
     return 0;
 }

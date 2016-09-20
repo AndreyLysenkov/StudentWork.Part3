@@ -47,3 +47,10 @@ int Magazine::GetMonth()
 {
     return this -> month;
 }
+
+void Magazine::Show()
+{
+    Printing::Show();
+    PrintKeyValuePair("   Year:", year);
+    PrintKeyValuePair("   Month:", month);
+}

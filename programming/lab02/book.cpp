@@ -45,7 +45,5 @@ char* Book::GetAuthor()
 void Book::Show()
 {
     Printing::Show();
-    PrintKeyValuePair("   Price", this -> price);
-    PrintKeyValuePair("   Title", this -> title);
-    NewLine();
+    PrintKeyValuePair("   Author", this -> author);
 }

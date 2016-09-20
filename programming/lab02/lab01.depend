@@ -10,7 +10,7 @@
 	<string.h>
 	"library.h"
 
-1474396808 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/book.cpp
+1474399785 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/book.cpp
 	<string.h>
 	"global.h"
 	"book.h"
@@ -26,27 +26,31 @@
 
 1474398503 /media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/printing.h
 
-1474398057 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/lab01.cpp
+1474399481 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/lab01.cpp
 	<iostream>
+	"global.h"
+	"printing.h"
 	"magazine.h"
+	"book.h"
+	"schoolbook.h"
 
-1474397436 /media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/magazine.h
+1474398913 /media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/magazine.h
 	"printing.h"
 
-1474398087 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/magazine.cpp
+1474399063 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/magazine.cpp
 	"global.h"
 	"magazine.h"
 
-1474397123 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/printing.cpp
+1474399728 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/printing.cpp
 	<string.h>
 	"printing.h"
 	"global.h"
 
-1474397322 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/schoolbook.cpp
+1474399793 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/schoolbook.cpp
 	<string.h>
 	"global.h"
 	"schoolbook.h"
 
-1474397317 /media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/schoolbook.h
+1474398934 /media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/schoolbook.h
 	"book.h"
 

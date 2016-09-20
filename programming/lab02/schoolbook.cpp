@@ -31,3 +31,10 @@ SchoolBook::~SchoolBook()
 {
     delete subject;
 }
+
+void SchoolBook::Show()
+{
+    Book::Show();
+    PrintKeyValuePair("   Subject", subject);
+    PrintKeyValuePair("   Grade", grade);
+}

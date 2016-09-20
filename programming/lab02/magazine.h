@@ -18,4 +18,6 @@ public:
 
     int GetMonth();
     void SetMonth(int);
+
+    virtual void Show();
 };

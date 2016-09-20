@@ -18,4 +18,6 @@ public:
 
     int GetGrade();
     void SetGrade(int);
+
+    virtual void Show();
 };

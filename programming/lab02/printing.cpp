@@ -9,6 +9,7 @@ void Printing::Init(float _price, const char* _title)
     this -> title = new char[MAX_STRING_SIZE];
     strcpy(title, _title);
     this -> price = _price;
+    this -> Add();
 }
 
 Printing::Printing(float _price, char* _title)
@@ -54,13 +55,15 @@ float Printing::GetPrice()
 
 void Printing::Show()
 {
+    NewLine();
     PrintKeyValuePair("   Price", this -> price);
     PrintKeyValuePair("   Title", this -> title);
-    NewLine();
 }
 
 void Printing::Add()
 {
+    Log("Adding");
+    this -> next = NULL;
     if (Printing::Top != NULL)
         this -> next = Printing::Top;
 
@@ -76,10 +79,11 @@ void Printing::Print()
 {
     Printing* current = Printing::Top;
     Log("Printing list: ");
-    for(int i = 0; current != NULL; current = current -> GetNext())
+    for(int i = 0; (current != NULL); i++)
     {
         Log("--- element #", i);
         current -> Show();
         Log("--- end ---");
+        current = current -> GetNext();
     }
 }
