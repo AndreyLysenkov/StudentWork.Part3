@@ -12,45 +12,45 @@ class Library
 
 private:
 
-	/*
-	 * Fields
-	 * */
+   /*
+    * Fields
+    * */
 
-	char* name;
-	char* author;
-	float price;
+   char* name;
+   char* author;
+   float price;
 
 public:
 
-	/*
-	 * Constructors & destructors
-	 * */
+   /*
+    * Constructors & destructors
+    * */
 
-	Library(char* _name, char* _time, float _price);
-	Library();
-	Library(Library &obj);
-	~Library();
+    Library();
+   Library(char* _name, char* _author, float _price);
+   Library(const Library &obj);
+   ~Library();
 
-	/*
-	 * Getters & setters
-	 * */
+   /*
+    * Getters & setters
+    * */
 
-	// author
-	char* GetAuthor();
-	void SetAuthor(char* _author);
+   // author
+   char* GetAuthor();
+   void SetAuthor(char* _author);
 
-	// name
-	char* GetName();
-	void SetName(char* _name);
+   // name
+   char* GetName();
+   void SetName(char* _name);
 
-	// price
-	float GetPrice();
-	void SetPrice(float _price);
+   // price
+   float GetPrice();
+   void SetPrice(float _price);
 
-	/*
-	 * Methods
-	 * */
+   /*
+    * Methods
+    * */
 
-	void Print();
+   void Print();
 
 };
