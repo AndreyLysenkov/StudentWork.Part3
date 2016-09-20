@@ -9,12 +9,11 @@
 
 #include <iostream>
 #include "magazine.h"
-#include "global.h"
 
 int main() {
-
+/*
     NewLine();
-    std::cout << "Creating books...";
+    Log("Creating books...");
     NewLine();
     NewLine();
 
@@ -63,6 +62,6 @@ int main() {
     }
 
     delete itBook2;
-    //std::cin >> choice;
+    //std::cin >> choice;*/
     return 0;
 }

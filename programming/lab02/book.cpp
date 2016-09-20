@@ -1,23 +1,27 @@
+#include <string.h>
+#include "global.h"
 #include "book.h"
 
-
-Book::Init(char* _author)
+void Book::Init(const char* _author)
 {
     this -> author = new char[MAX_STRING_SIZE];
     strcpy(author, _author);
 }
 
-Book::Book(char* _author)
+Book::Book(float _price, char* _title, char* _author)
+ : Printing(_price, _title)
 {
     this -> Init(_author);
 }
 
 Book::Book(const Book& obj)
+    : Printing(obj)
 {
     this -> Init(obj.author);
 }
 
 Book::Book()
+    : Printing()
 {
     this -> Init(DEFAULT_AUTHOR);
 }
@@ -33,7 +37,15 @@ void Book::SetAuthor(char* _author)
     strcpy(author, _author);
 }
 
-char* Printing::GetAuthor()
+char* Book::GetAuthor()
 {
     return this -> author;
+}
+
+void Book::Show()
+{
+    Printing::Show();
+    PrintKeyValuePair("   Price", this -> price);
+    PrintKeyValuePair("   Title", this -> title);
+    NewLine();
 }

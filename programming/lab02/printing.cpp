@@ -1,10 +1,13 @@
+#include <string.h>
 #include "printing.h"
 #include "global.h"
 
-Printing::Init(float _price, char* _title)
+Printing* Printing::Top = NULL;
+
+void Printing::Init(float _price, const char* _title)
 {
     this -> title = new char[MAX_STRING_SIZE];
-    strcpy(name, _title);
+    strcpy(title, _title);
     this -> price = _price;
 }
 
@@ -13,9 +16,9 @@ Printing::Printing(float _price, char* _title)
     this -> Init(_price, _title);
 }
 
-Printing::Printing(const Library &obj)
+Printing::Printing(const Printing& obj)
 {
-    this -> Init(obj.title, obj.price);
+    this -> Init(obj.price, obj.title);
 }
 
 Printing::Printing()
@@ -30,7 +33,7 @@ Printing::~Printing()
 
 void Printing::SetTitle(char* _title)
 {
-    this->author = new char[MAX_STRING_SIZE];
+    this -> title = new char[MAX_STRING_SIZE];
     strcpy(title, _title);
 }
 
@@ -53,16 +56,18 @@ void Printing::Show()
 {
     PrintKeyValuePair("   Price", this -> price);
     PrintKeyValuePair("   Title", this -> title);
-    std::cout << std::endl;
+    NewLine();
 }
 
 void Printing::Add()
 {
-    this -> next = Printing::Top;
+    if (Printing::Top != NULL)
+        this -> next = Printing::Top;
+
     Printing::Top = this;
 }
 
-void Printing::GetNext()
+Printing* Printing::GetNext()
 {
     return this -> next;
 }

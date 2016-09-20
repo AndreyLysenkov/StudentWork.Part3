@@ -1,9 +1,10 @@
+#include "global.h"
 #include "magazine.h"
 
-Magazine::Init(int _year, int _month)
+void Magazine::Init(int _year, int _month)
 {
     this -> year = _year;
-    this -> mounth = _mounth;
+    this -> month = _month;
 }
 
 Magazine::Magazine(float _price, char* _title, int _year, int _mounth)
@@ -13,13 +14,15 @@ Magazine::Magazine(float _price, char* _title, int _year, int _mounth)
 }
 
 Magazine::Magazine(const Magazine& obj)
+    : Printing(obj)
 {
-    this -> Init(obj.year, obj.mounth);
+    this -> Init(obj.year, obj.month);
 }
 
 Magazine::Magazine()
+    : Printing()
 {
-    this -> Init(DEFAULT_YEAR, DEFAULT_MOUNTH);
+    this -> Init(DEFAULT_YEAR, DEFAULT_MONTH);
 }
 
 Magazine::~Magazine()
@@ -30,17 +33,17 @@ void Magazine::SetYear(int _year)
     this -> year = _year;
 }
 
-float Magazine::GetYear()
+int Magazine::GetYear()
 {
     return this -> year;
 }
 
-void Magazine::SetMounth(int _mounth)
+void Magazine::SetMonth(int _month)
 {
-    this -> mounth = _mounth;
+    this -> month = _month;
 }
 
-float Magazine::GetMounth()
+int Magazine::GetMonth()
 {
-    return this -> mounth;
+    return this -> month;
 }

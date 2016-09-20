@@ -1,15 +1,15 @@
-#include "printing.h"
 #pragma once
+#include "printing.h"
 
 class Magazine : public Printing
 {
 protected:
     int year;
     int month;
-    void Init(int year, int mounth);
+    void Init(int year, int month);
 public:
     Magazine();
-    Magazine(float price, char* title);
+    Magazine(float price, char* title, int year, int month);
     Magazine(const Magazine&);
     ~Magazine();
 

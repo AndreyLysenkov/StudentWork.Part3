@@ -7,7 +7,7 @@ private:
 protected:
     float price;
     char* title;
-    void Init(float price, char* title);
+    void Init(float price,const char* title);
 public:
     static Printing* Top;
 

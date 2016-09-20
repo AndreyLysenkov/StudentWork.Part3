@@ -1,12 +1,12 @@
 #include <iostream>
 #include <string.h>
 
-void Log(char* message)
+void Log(const char* message)
 {
     std::cout << message << std::endl;
 }
 
-void Log(char* message, int value)
+void Log(const char* message, int value)
 {
     std::cout << message << value << std::endl;
 }
