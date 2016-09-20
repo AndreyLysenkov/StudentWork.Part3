@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1474383926 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab01/lab01.cpp
+	<iostream>
+	"library.h"
+
+1474382777 /media/walpy/walpystorage/cloud/google/git/studWork/programming/lab01/library.h
+
+1474383248 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab01/library.cpp
+	<iostream>
+	<string.h>
+	"library.h"
+
+1474387673 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/book.cpp
+
+1474395103 source:/media/walpy/walpystorage/cloud/google/git/studWork/programming/lab02/global.cpp
+	<iostream>
+	<string.h>
+
